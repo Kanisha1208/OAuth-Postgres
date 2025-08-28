@@ -50,6 +50,11 @@ public class WebSecurityConfig  {
 					.antMatchers("/user/**").hasAnyRole("USER")
 					.anyRequest().authenticated()
                 .and()
+
+                .oauth2Login()
+                .and()
+
+
                     .formLogin()
                         .loginPage("/login")
                         .permitAll()
